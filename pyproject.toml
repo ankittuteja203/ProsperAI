@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prosperai-agent-framework"
+version = "0.3.0"
+description = "Foundational reusable AI agentic framework for ProsperAI"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+prosperai-demo = "prosperai_agent_framework.demo:main"
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.39,<2"]

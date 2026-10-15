@@ -1,0 +1,48 @@
+ProsperAI Agent Framework v0.3 Validation
+==========================================
+Core test command return code: 0
+Tests discovered/run: 18
+Console demo return code: 0
+Python modules syntax-compiled: 17
+
+UI validation:
+- ui_app.py syntax compile: PASS
+- run_ui.py syntax compile: PASS
+- Streamlit is an optional dependency and should be installed with:
+  py -m pip install -e ".[ui]"
+
+TEST OUTPUT
+-----------
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
+test_dependent_task_waits_for_dependency (test_framework.ExecutorTests.test_dependent_task_waits_for_dependency) ... ok
+test_independent_tasks_run_concurrently (test_framework.ExecutorTests.test_independent_tasks_run_concurrently) ... ok
+test_pii_email_is_masked_without_masking_business_number (test_framework.GuardrailTests.test_pii_email_is_masked_without_masking_business_number) ... ok
+test_prompt_injection_is_blocked (test_framework.GuardrailTests.test_prompt_injection_is_blocked) ... ok
+test_model_timeout_is_normalized (test_framework.ModelTests.test_model_timeout_is_normalized) ... ok
+test_provider_can_be_swapped (test_framework.ModelTests.test_provider_can_be_swapped) ... ok
+test_modified_action_gets_fresh_idempotency_identity (test_framework.PresentationIntegrationTests.test_modified_action_gets_fresh_idempotency_identity) ... ok
+test_orchestrator_returns_masked_request_and_plan (test_framework.PresentationIntegrationTests.test_orchestrator_returns_masked_request_and_plan) ... ok
+test_parallelism_probe (test_framework.PresentationIntegrationTests.test_parallelism_probe) ... ok
+test_tool_description_exposes_server_grouping (test_framework.PresentationIntegrationTests.test_tool_description_exposes_server_grouping) ... ok
+test_structured_telemetry_contains_no_prompt_text (test_framework.PropagationAndTelemetryTests.test_structured_telemetry_contains_no_prompt_text) ... ok
+test_tenant_and_correlation_propagate_to_evidence (test_framework.PropagationAndTelemetryTests.test_tenant_and_correlation_propagate_to_evidence) ... ok
+test_discovery_only_returns_allowed_tools_across_servers (test_framework.ToolPolicyTests.test_discovery_only_returns_allowed_tools_across_servers) ... ok
+test_tool_timeout_is_normalized (test_framework.ToolPolicyTests.test_tool_timeout_is_normalized) ... ok
+test_unapproved_agent_cannot_call_tool (test_framework.ToolPolicyTests.test_unapproved_agent_cannot_call_tool) ... ok
+test_approved_action_revalidates_and_executes_once (test_framework.WorkflowTests.test_approved_action_revalidates_and_executes_once) ... ok
+test_collections_flow_stops_at_approval (test_framework.WorkflowTests.test_collections_flow_stops_at_approval) ... ok
+test_cross_tenant_approval_is_denied (test_framework.WorkflowTests.test_cross_tenant_approval_is_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.143s
+
+OK
